@@ -31,9 +31,9 @@ const int configpin = D4;                                         // Reset Pin
 // User settings are above here
 const int ledpin = BUILTIN_LED;                               // Built in LED defined for WEMOS people
 
-char mdnsName[128]      = "ir.local";
+char mdnsName[128]      = "bedroom.remote";
 
-char mqttServer[128]    = "mqtt.local";
+char mqttServer[128]    = "192.168.86.47";
 char mqttPortString[6]  = "1883";
 int  mqttPort           = atoi(mqttPortString);
 char mqttUser[32]       = "";
@@ -45,7 +45,7 @@ char static_sn[16] = "";
 
 WiFiClient wifi;
 
-const char* MQTT_TOPIC_SUB = "ir/json";
+const char* MQTT_TOPIC_SUB = "bedroom/remote";
 const char* MQTT_TOPIC_PUB = "ir/receive";
 PubSubClient * mqtt;
 
