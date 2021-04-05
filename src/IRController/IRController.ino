@@ -31,7 +31,7 @@ const int configpin = D4;                                         // Reset Pin
 // User settings are above here
 const int ledpin = BUILTIN_LED;                               // Built in LED defined for WEMOS people
 
-char mdnsName[128]      = "bedroom.remote";
+char mdnsName[128]      = "bedroom.IRBlaster";
 
 char mqttServer[128]    = "192.168.86.47";
 char mqttPortString[6]  = "1883";
@@ -49,7 +49,7 @@ const char* MQTT_TOPIC_SUB = "bedroom/remote";
 const char* MQTT_TOPIC_PUB = "ir/receive";
 PubSubClient * mqtt;
 
-bool shouldSaveConfig = false;                                // Flag for saving data
+bool shouldSaveConfig = true;                                // Flag for saving data
 bool holdReceive = false;                                     // Flag to prevent IR receiving while transmitting
 
 IRrecv irrecv(pinr1, captureBufSize);
